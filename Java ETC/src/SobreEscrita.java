@@ -11,7 +11,7 @@ class Cachorro extends Animal {
     }
 }
 
-public class Sobrescrita {
+public class SobreEscrita {
     public static void main(String[] args) {
         Animal animal = new Animal();
         Animal cachorro = new Cachorro();
