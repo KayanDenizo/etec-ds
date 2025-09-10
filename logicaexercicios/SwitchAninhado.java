@@ -9,7 +9,6 @@ public class SwitchAninhado {
         int subOpcao;
 
         do {
-            // Menu principal
             System.out.println("=== MENU PRINCIPAL ===");
             System.out.println("1. Gerenciar Usuários");
             System.out.println("2. Gerenciar Produtos");
@@ -19,7 +18,6 @@ public class SwitchAninhado {
 
             switch (opcaoPrincipal) {
                 case 1:
-                    // Submenu de usuários
                     System.out.println("\n--- GERENCIAR USUÁRIOS ---");
                     System.out.println("1. Cadastrar Usuário");
                     System.out.println("2. Listar Usuários");
@@ -44,7 +42,6 @@ public class SwitchAninhado {
                     break;
 
                 case 2:
-                    // Submenu de produtos
                     System.out.println("\n--- GERENCIAR PRODUTOS ---");
                     System.out.println("1. Adicionar Produto");
                     System.out.println("2. Listar Produtos");
