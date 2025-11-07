@@ -3,10 +3,7 @@ package br.com.pi.ui;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
-import java.math.BigDecimal;
 
-import br.com.pi.dao.ProdutoDao;
-import br.com.pi.model.Produto;
 public class ProdutoPanel extends JPanel {
     private JTextField campoNomeProduto;
     private JTextField campoCodigo;
@@ -122,31 +119,21 @@ public class ProdutoPanel extends JPanel {
             return;
         }
 
-        Produto produto = new Produto();
-        produto.setNome(nome);
-        produto.setCodigo(codigo);
-        try {
-            produto.setPreco(new BigDecimal(precoTexto.replace(".", "").replace(",", ".")));
-        } catch (Exception ignore) { /* validado acima, fallback null */ }
-        produto.setCategoria(categoria);
-        produto.setTipo(tipo);
-        produto.setDisponivel(disponivel);
-
-        try {
-            long id = new ProdutoDao().inserir(produto);
-            StringBuilder resumo = new StringBuilder();
-            resumo.append("Produto cadastrado com sucesso!\n\n");
-            resumo.append("ID: ").append(id).append('\n');
-            resumo.append("Nome: ").append(nome).append('\n');
-            resumo.append("Código: ").append(codigo).append('\n');
-            resumo.append("Preço (R$): ").append(precoTexto).append('\n');
-            resumo.append("Categoria: ").append(categoria).append('\n');
-            resumo.append("Tipo: ").append(tipo).append('\n');
-            resumo.append("Disponível: ").append(disponivel ? "Sim" : "Não");
-            JOptionPane.showMessageDialog(this, resumo.toString(), "Sucesso", JOptionPane.INFORMATION_MESSAGE);
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(this, "Erro ao salvar no banco: " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
-        }
+        // Exibe os dados cadastrados (sem salvar no banco de dados)
+        StringBuilder resumo = new StringBuilder();
+        resumo.append("Dados do Produto:\n\n");
+        resumo.append("Nome: ").append(nome).append('\n');
+        resumo.append("Código: ").append(codigo).append('\n');
+        resumo.append("Preço (R$): ").append(precoTexto).append('\n');
+        resumo.append("Categoria: ").append(categoria).append('\n');
+        resumo.append("Tipo: ").append(tipo).append('\n');
+        resumo.append("Disponível: ").append(disponivel ? "Sim" : "Não").append('\n');
+        resumo.append("\n(Formulário enviado - sem persistência no banco de dados)");
+        
+        JOptionPane.showMessageDialog(this, resumo.toString(), "Dados do Produto", JOptionPane.INFORMATION_MESSAGE);
+        
+        // Limpa o formulário após exibir os dados
+        onLimpar();
     }
 
     private void onLimpar() {

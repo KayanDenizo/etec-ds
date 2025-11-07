@@ -3,10 +3,6 @@ package br.com.pi.ui;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
-import java.math.BigDecimal;
-
-import br.com.pi.dao.ClienteDao;
-import br.com.pi.model.Cliente;
 
 public class ClientePanel extends JPanel {
     private JTextField campoNome;
@@ -128,29 +124,21 @@ public class ClientePanel extends JPanel {
             return;
         }
 
-        Cliente cliente = new Cliente();
-        cliente.setNome(nome);
-        cliente.setEmail(email);
-        cliente.setCpf(cpf);
-        cliente.setSexo(sexo);
-        cliente.setUf(uf);
-        cliente.setNewsletter(newsletter);
-
-        try {
-            long id = new ClienteDao().inserir(cliente);
-            StringBuilder resumo = new StringBuilder();
-            resumo.append("Cliente cadastrado com sucesso!\n\n");
-            resumo.append("ID: ").append(id).append('\n');
-            resumo.append("Nome: ").append(nome).append('\n');
-            resumo.append("Email: ").append(email).append('\n');
-            resumo.append("CPF: ").append(cpf).append('\n');
-            resumo.append("Sexo: ").append(sexo).append('\n');
-            resumo.append("UF: ").append(uf).append('\n');
-            resumo.append("Newsletter: ").append(newsletter ? "Sim" : "Não");
-            JOptionPane.showMessageDialog(this, resumo.toString(), "Sucesso", JOptionPane.INFORMATION_MESSAGE);
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(this, "Erro ao salvar no banco: " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
-        }
+        // Exibe os dados cadastrados (sem salvar no banco de dados)
+        StringBuilder resumo = new StringBuilder();
+        resumo.append("Dados do Cliente:\n\n");
+        resumo.append("Nome: ").append(nome).append('\n');
+        resumo.append("Email: ").append(email).append('\n');
+        resumo.append("CPF: ").append(cpf).append('\n');
+        resumo.append("Sexo: ").append(sexo).append('\n');
+        resumo.append("UF: ").append(uf).append('\n');
+        resumo.append("Newsletter: ").append(newsletter ? "Sim" : "Não").append('\n');
+        resumo.append("\n(Formulário enviado - sem persistência no banco de dados)");
+        
+        JOptionPane.showMessageDialog(this, resumo.toString(), "Dados do Cliente", JOptionPane.INFORMATION_MESSAGE);
+        
+        // Limpa o formulário após exibir os dados
+        onLimpar();
     }
 
     private void onLimpar() {
