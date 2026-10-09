@@ -4,11 +4,12 @@ Atividades e projetos da disciplina **Desenvolvimento de Sistemas** (2025), do c
 
 | Atividade | Descrição | Tecnologias | Data |
 |---|---|---|---|
-| [`01-poo-abstracao-e-interfaces`](01-poo-abstracao-e-interfaces/) | Orientação a objetos: classes abstratas e interfaces | Java | 02/2025 |
-| [`02-estruturas-de-controle`](02-estruturas-de-controle/) | Lógica de programação: if, switch, for, while e do-while | Java | 09/2025 |
-| [`03-exemplos-swing`](03-exemplos-swing/) | Exemplos de componentes Swing: botões, abas, menus, diálogos e formulários | Java, Swing | 09/2025 |
-| [`04-cadastro-clientes-e-produtos`](04-cadastro-clientes-e-produtos/) | Sistema de cadastro de clientes e produtos com diagramas UML | Java, Swing, MySQL | 11/2025 |
-| [`05-cadastro-de-alunos`](05-cadastro-de-alunos/) | Cadastro de alunos com interface gráfica e DAO | Java, Swing, MySQL | 11/2025 |
+| [`01-fundamentos-java`](01-fundamentos-java/) | Fundamentos de Java: tipos primitivos, Scanner, métodos, sobrecarga e sobrescrita | Java | 02/2025 |
+| [`02-poo-abstracao-e-interfaces`](02-poo-abstracao-e-interfaces/) | Orientação a objetos: classes abstratas e interfaces | Java | 02/2025 |
+| [`03-estruturas-de-controle`](03-estruturas-de-controle/) | Lógica de programação: if, switch, for, while e do-while | Java | 09/2025 |
+| [`04-exemplos-swing`](04-exemplos-swing/) | Exemplos de componentes Swing: botões, abas, menus, diálogos e formulários | Java, Swing | 09/2025 |
+| [`05-cadastro-clientes-e-produtos`](05-cadastro-clientes-e-produtos/) | Sistema de cadastro de clientes e produtos com diagramas UML | Java, Swing, MySQL | 11/2025 |
+| [`06-cadastro-de-alunos`](06-cadastro-de-alunos/) | Cadastro de alunos com interface gráfica e DAO | Java, Swing, MySQL | 11/2025 |
 
 > O sistema de cadastro em Java Swing mais completo desta matéria tem repositório próprio: [java-ds-project](https://github.com/KayanDenizo/java-ds-project).
 
